@@ -1,0 +1,242 @@
+.result-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.result-card {
+  background: white;
+  border-radius: 25px;
+  padding: 40px 30px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.result-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: linear-gradient(90deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+}
+
+.result-header {
+  margin-bottom: 30px;
+}
+
+.performance-emoji {
+  font-size: 4rem;
+  margin-bottom: 15px;
+  animation: bounce 1s ease infinite alternate;
+}
+
+.result-title {
+  font-size: 2.2rem;
+  color: #2c3e50;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.score-section {
+  margin-bottom: 30px;
+}
+
+.score-circle {
+  width: 120px;
+  height: 120px;
+  border: 4px solid;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  position: relative;
+  background: white;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.score-number {
+  font-size: 2.5rem;
+  font-weight: bold;
+  line-height: 1;
+}
+
+.score-total {
+  font-size: 1rem;
+  color: #7f8c8d;
+  margin-top: -5px;
+}
+
+.percentage-display {
+  margin-bottom: 15px;
+}
+
+.percentage {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.performance-level {
+  font-size: 1.3rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.encouragement-section {
+  margin-bottom: 30px;
+}
+
+.encouragement-message {
+  font-size: 1.2rem;
+  color: #2c3e50;
+  line-height: 1.5;
+  margin: 0;
+  font-weight: 500;
+}
+
+.stats-section {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 30px;
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 15px;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.stat-icon {
+  font-size: 1.5rem;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: #7f8c8d;
+  font-weight: 600;
+}
+
+.stat-value {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.restart-button,
+.practice-button {
+  padding: 15px 25px;
+  border: none;
+  border-radius: 25px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 180px;
+}
+
+.restart-button {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.3);
+}
+
+.practice-button {
+  background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+  color: white;
+  box-shadow: 0 6px 20px rgba(67, 233, 123, 0.3);
+}
+
+.restart-button:hover,
+.practice-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.motivational-quote {
+  margin-top: 20px;
+  padding: 20px;
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(240, 147, 251, 0.1) 100%);
+  border-radius: 15px;
+  border-left: 4px solid #667eea;
+}
+
+.motivational-quote p {
+  font-style: italic;
+  color: #7f8c8d;
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+/* Animations */
+@keyframes bounce {
+  from { transform: translateY(0px); }
+  to { transform: translateY(-10px); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .result-title {
+    font-size: 1.8rem;
+  }
+
+  .action-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .restart-button,
+  .practice-button {
+    min-width: 200px;
+  }
+
+  .stats-section {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .result-container {
+    padding: 15px;
+  }
+
+  .result-card {
+    padding: 30px 20px;
+  }
+
+  .result-title {
+    font-size: 1.6rem;
+  }
+
+  .performance-emoji {
+    font-size: 3rem;
+  }
+
+  .score-circle {
+    width: 100px;
+    height: 100px;
+  }
+
+  .score-number {
+    font-size: 2rem;
+  }
+}

@@ -1,0 +1,182 @@
+.flashcard-container {
+  perspective: 1000px;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.flashcard {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  transform-style: preserve-3d;
+  transition: transform 0.6s ease;
+  cursor: pointer;
+}
+
+.flashcard.flipped {
+  transform: rotateY(180deg);
+}
+
+.flashcard-front,
+.flashcard-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 25px;
+  box-sizing: border-box;
+}
+
+.flashcard-front {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.flashcard-back {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  color: white;
+  transform: rotateY(180deg);
+}
+
+.card-header {
+  text-align: center;
+}
+
+.flip-hint {
+  font-size: 0.9rem;
+  opacity: 0.8;
+  background: rgba(255,255,255,0.2);
+  padding: 5px 15px;
+  border-radius: 15px;
+  display: inline-block;
+}
+
+.word-display {
+  text-align: center;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.native-word {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.pronunciation {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.pronunciation-label {
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+.pronunciation-text {
+  font-size: 1.4rem;
+  font-weight: 600;
+  background: rgba(255,255,255,0.2);
+  padding: 10px 20px;
+  border-radius: 25px;
+  display: inline-block;
+}
+
+.meaning-display {
+  text-align: center;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.meaning-title {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.meaning-text {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 25px;
+  background: rgba(255,255,255,0.2);
+  padding: 15px 20px;
+  border-radius: 15px;
+}
+
+.example-section {
+  background: rgba(255,255,255,0.1);
+  padding: 15px;
+  border-radius: 15px;
+}
+
+.example-label {
+  font-size: 1rem;
+  display: block;
+  margin-bottom: 10px;
+  opacity: 0.9;
+}
+
+.example-text {
+  font-size: 1.1rem;
+  font-style: italic;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.card-footer {
+  text-align: center;
+}
+
+.card-type {
+  font-size: 0.8rem;
+  opacity: 0.7;
+  background: rgba(255,255,255,0.2);
+  padding: 3px 10px;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+.flip-instruction {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.flip-instruction p {
+  color: #7f8c8d;
+  font-size: 1rem;
+  margin: 0;
+}
+
+@media (max-width: 480px) {
+  .flashcard {
+    height: 280px;
+  }
+
+  .flashcard-front,
+  .flashcard-back {
+    padding: 20px;
+  }
+
+  .native-word {
+    font-size: 2rem;
+  }
+
+  .pronunciation-text {
+    font-size: 1.2rem;
+  }
+
+  .meaning-text {
+    font-size: 1.5rem;
+  }
+}
